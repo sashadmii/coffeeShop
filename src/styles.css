@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+p {
+  margin-bottom: 1rem;
+}
+
+.header {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url(./images/bg.jpg);
+  justify-items: center;
+  align-content: center;
+}
+
+.about {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.text {
+  width: 50%;
+  padding-top: 10rem;
+  padding-left: 5rem;
+  padding-right: 10rem;
+  padding-bottom: 5rem;
+}
+
+.image {
+  background-color: #d3d7cd;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+img {
+  width: 60%;
+}

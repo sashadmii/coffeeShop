@@ -11,6 +11,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 h1,
@@ -40,9 +41,12 @@ p {
 }
 
 .header {
-  max-width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: url(./images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   justify-items: center;
   align-content: center;
 }
@@ -185,4 +189,144 @@ li p {
 
 .social-icon {
   margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .header h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .about {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .text,
+  .image {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .aboutImg {
+    width: 80%;
+  }
+
+  .text {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .mImg,
+  .sImg {
+    display: none;
+  }
+
+  .menuTitle {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .menuBody {
+    padding-top: 6rem;
+  }
+
+  .menu-section {
+    grid-template-columns: 1fr;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .footer-container {
+    gap: 1rem;
+  }
+
+  .footer-info,
+  .footer-hours,
+  .footer-socials {
+    flex: 1 1 33%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-info,
+  .footer-hours,
+  .footer-socials {
+    flex: 1 1 100%;
+    text-align: center; /* Center align the text */
+  }
+
+  .footer-bottom {
+    font-size: 1rem; /* Increase font size for better readability */
+  }
+
+  .footer {
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .menuTitle {
+    font-size: 7rem;
+    left: 50%;
+    top: 93%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+  }
+
+  .menuBody {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3,
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .aboutImg {
+    width: 100%;
+  }
+
+  .menuHead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }

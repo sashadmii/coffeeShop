@@ -22,6 +22,14 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.scss$/i,
+        use: [
+          'style-loader', // Injects styles into DOM
+          'css-loader', // Turns CSS into CommonJS
+          'sass-loader', // Compiles Sass to CSS
+        ],
+      },
     ],
   },
   plugins: [

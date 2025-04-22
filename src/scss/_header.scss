@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+.header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-items: center;
+  align-content: center;
+}
+
+.header h1 {
+  font-size: 5rem;
+  color: $white;
+  -webkit-text-stroke: 0.01rem $olive-green;
+}

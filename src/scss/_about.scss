@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.about {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.text {
+  width: 50%;
+  padding-top: $base-padding * 2;
+  padding-left: $base-padding;
+  padding-right: $base-padding * 2;
+  padding-bottom: $base-padding;
+}
+
+.image {
+  background-color: $light-silver;
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  padding-top: $base-padding * 2;
+  padding-bottom: $base-padding;
+}
+
+.aboutImg {
+  width: 60%;
+}

@@ -1,0 +1,40 @@
+@use 'variables' as *;
+
+.footer {
+  background-color: $dark-olive;
+  padding-top: $base-padding;
+  padding-left: $base-padding;
+  padding-right: $base-padding;
+  padding-bottom: 1rem;
+}
+
+.footer h3,
+.footer h4,
+.footer p {
+  color: $light-silver;
+  margin-bottom: 1rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-info,
+.footer-hours,
+.footer-socials {
+  flex: 1 1 25%;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid $light-silver;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.social-icon {
+  margin-right: 0.5rem;
+}

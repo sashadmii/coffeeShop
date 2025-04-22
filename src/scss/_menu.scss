@@ -1,0 +1,69 @@
+@use 'variables' as *;
+
+.menuHead {
+  position: relative;
+  background-color: $light-silver;
+}
+
+.lImg {
+  width: 100%;
+}
+
+.mImg {
+  width: 60%;
+  position: absolute;
+  bottom: -30%;
+  left: 40%;
+}
+
+.sImg {
+  width: 30%;
+  position: absolute;
+  bottom: -25%;
+  left: 20%;
+}
+
+.menuTitle {
+  position: absolute;
+  bottom: -34%;
+  left: 5rem;
+  font-size: 15rem;
+  color: $white;
+  letter-spacing: 1rem;
+}
+
+.menuBody {
+  background-color: $light-silver;
+  padding-top: $base-padding * 3;
+  padding-bottom: $base-padding * 2;
+}
+
+.menu-section {
+  padding-left: $base-padding;
+  padding-right: $base-padding;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.menu-list {
+  padding: 0.625rem;
+}
+
+.menu-list ul {
+  list-style-type: none;
+}
+
+.menu-section h2 {
+  margin-bottom: 0.625rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  color: $olive-green;
+  font-weight: 700;
+}
+
+li p {
+  font-weight: 500;
+}

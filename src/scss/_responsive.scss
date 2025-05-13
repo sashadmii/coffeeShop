@@ -24,6 +24,40 @@
     padding: $base-padding-sm;
   }
 
+  .wrapper {
+    width: 90vw;
+    height: fit-content;
+  }
+
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel li {
+    width: 100%;
+    list-style-type: none;
+  }
+
+  .card {
+    flex: 0 0 100%;
+  }
+
+  .card img {
+    width: 80%;
+  }
+
+  .prev,
+  .next {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+
+  .order-btn {
+    font-size: 1.25rem;
+  }
+
   .aboutImg {
     width: 80%;
   }
@@ -99,6 +133,15 @@
   .menuBody {
     padding-top: 4rem;
     padding-bottom: 5rem;
+  }
+
+  .card-text h2,
+  .card-text span {
+    font-size: 1.5rem;
+  }
+
+  .card-text h2 h2 {
+    margin-bottom: 0;
   }
 }
 

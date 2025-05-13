@@ -1,17 +1,44 @@
 @use 'variables' as *;
+@use 'button' as *;
 
 .card {
-  display: inline-flex;
+  display: none;
   flex-direction: column;
-  width: 50%;
+  flex-wrap: nowrap;
   align-items: center;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.card.active {
+  display: flex;
+  opacity: 1;
 }
 
 .card-text {
-  width: 70%;
-  text-align-last: justify;
+  margin-top: $base-margin + 1;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-text h2,
+.card-text span {
+  font-family: $heading-font;
+  font-size: $heading-font-size;
+  color: $dark-olive;
+}
+
+.card-text h2 {
+  margin-bottom: 0;
 }
 
 .card img {
   width: 100%;
+}
+
+.order-btn {
+  @extend .base-button;
+  width: 80%;
 }

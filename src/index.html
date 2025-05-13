@@ -3,46 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BOTANIQUE CAFÉ</title>
+
+    <title>BOTANIQUE</title>
   </head>
+  <script src="index.js"></script>
   <body>
     <div id="app">
       <div class="header">
-        <h1>BOTANIQUE CAFÉ</h1>
+        <h1>BOTANIQUE</h1>
       </div>
-      <div class="toGo-container">
-        <ul class="slider">
-          <li class="card">
-            <img src="./images/toGo/espresso.png" />
-            <div class="card-text"><h3>Espresso $3</h3></div>
-            <button class="base-button">Order to go</button>
-          </li>
 
-          <!-- <div class="card">
-            <img src="./images/toGo/americano.png" />Americano
-          </div>
-          <div class="card">
-            <img src="./images/toGo/cappuccino.png" />Cappuccino
-          </div>
-          <div class="card"><img src="./images/toGo/latte.png" />Latte</div>
-          <div class="card"><img src="./images/toGo/mocha.png" />Mocha</div>
-          <div class="card">
-            <img src="./images/toGo/flat-white.png" />Flat White
-          </div>
-          <div class="card">
-            <img src="./images/toGo/cold-brew.png" />Cold Brew
-          </div>
-          <div class="card">
-            <img src="./images/toGo/ice-latte.png" />Iced Latte
-          </div>
-          <div class="card">
-            <img src="./images/toGo/botanique.png" />Botanique's Special
-          </div>
-          <div class="card">
-            <img src="./images/toGo/mex-mocha.png" />Mexican Mocha
-          </div> -->
-        </ul>
-      </div>
       <div class="about">
         <article class="text">
           <h2>Behind every great day is a cup of coffee</h2>
@@ -72,6 +42,101 @@
           <img class="aboutImg" src="./images/about.jpg" />
         </div>
       </div>
+      <div class="no-queue">
+        <h2>SKIP THE LINE</h2>
+        <p>
+          Your coffee’s just a tap away. Order online, pay with Apple or Google
+          Pay, and relax while we prepare your drink. We’ll call your name when
+          it’s ready. Just swing by the counter and enjoy!
+        </p>
+      </div>
+      <section class="wrapper">
+        <button class="prev">←</button>
+        <ul class="carousel">
+          <li class="card active">
+            <img src="./images/toGo/espresso.png" alt="Espresso" />
+            <div class="card-text">
+              <h2>Espresso</h2>
+              <span>$3</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/americano.png" alt="Americano" />
+            <div class="card-text">
+              <h2>Americano</h2>
+              <span>$3.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/cappuccino.png" alt="Cappuccino" />
+            <div class="card-text">
+              <h2>Cappuccino</h2>
+              <span>$4</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/latte.png" alt="Latte" />
+            <div class="card-text">
+              <h2>Latte</h2>
+              <span>$4.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/mocha.png" alt="Mocha" />
+            <div class="card-text">
+              <h2>Mocha</h2>
+              <span>$5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/flat-white.png" alt="Flat White" />
+            <div class="card-text">
+              <h2>Flat White</h2>
+              <span>$4.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/cold-brew.png" alt="Cold Brew" />
+            <div class="card-text">
+              <h2>Cold Brew</h2>
+              <span>$4.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/ice-latte.png" alt="Iced Latte" />
+            <div class="card-text">
+              <h2>Iced Latte</h2>
+              <span>$4.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/botanique.png" alt="Botanique Special" />
+            <div class="card-text">
+              <h2>Botanique Special</h2>
+              <span>$5.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+          <li class="card">
+            <img src="./images/toGo/mex-mocha.png" alt="Mexican Mocha" />
+            <div class="card-text">
+              <h2>Mexican Mocha</h2>
+              <span>$5.5</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+          </li>
+        </ul>
+
+        <button class="next">→</button>
+      </section>
       <div class="menuHead">
         <img class="lImg" src="./images/menu_1.jpg" />
         <img class="mImg" src="./images/menu_3.jpg" />

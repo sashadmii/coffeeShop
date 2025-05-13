@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'button' as *;
+
+.no-queue {
+  width: 50%;
+  justify-self: center;
+  padding-top: $base-padding;
+}
+
+.no-queue h2 {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  width: 60vw;
+  padding-top: $base-padding-sm;
+  padding-bottom: $base-padding;
+  justify-self: center;
+  align-items: center;
+}
+
+.carousel {
+  flex: 1;
+  display: flex;
+  height: fit-content;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.carousel li {
+  width: 50%;
+  list-style-type: none;
+}
+
+.prev,
+.next {
+  @extend .base-button;
+  width: 5rem;
+  height: 5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 2rem;
+}

@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $shadow;
+  z-index: 1;
+  display: none;
+}
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30rem;
+  height: 100%;
+  background-color: $white;
+  box-shadow: -4px 0 10px $cart-shadow;
+  z-index: 2;
+  padding: 1.25rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.cart.open {
+  transform: translateX(0);
+}
+
+.overlay.show {
+  display: block;
+}

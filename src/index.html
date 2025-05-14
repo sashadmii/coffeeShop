@@ -6,14 +6,13 @@
 
     <title>BOTANIQUE</title>
   </head>
-  <script src="index.js"></script>
   <body>
     <div id="app">
-      <div class="header">
+      <div class="header" id="home">
         <h1>BOTANIQUE</h1>
       </div>
 
-      <div class="about">
+      <div class="about" id="about">
         <article class="text">
           <h2>Behind every great day is a cup of coffee</h2>
           <p>
@@ -42,7 +41,7 @@
           <img class="aboutImg" src="./images/about.jpg" />
         </div>
       </div>
-      <div class="no-queue">
+      <div class="no-queue" id="skip">
         <h2>SKIP THE LINE</h2>
         <p>
           Your coffee’s just a tap away. Order online, pay with Apple or Google
@@ -59,7 +58,7 @@
               <h2>Espresso</h2>
               <span>$3</span>
             </div>
-            <button class="order-btn">Order Now</button>
+            <button class="order-btn" value="espresso">Order Now</button>
           </li>
           <li class="card">
             <img src="./images/toGo/americano.png" alt="Americano" />
@@ -137,7 +136,7 @@
 
         <button class="next">→</button>
       </section>
-      <div class="menuHead">
+      <div class="menuHead" id="menu">
         <img class="lImg" src="./images/menu_1.jpg" />
         <img class="mImg" src="./images/menu_3.jpg" />
         <img class="sImg" src="./images/menu_4.jpg" />
@@ -269,7 +268,35 @@
       </div>
     </div>
 
-    <footer class="footer">
+    <div class="overlay" id="overlay"></div>
+    <div class="cart" id="cart">
+      <h2>Cart</h2>
+      <!-- <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="/src/images/toGo/americano.png" alt="" />
+        </div>
+
+        <div class="description">
+          <span>Americano</span>
+          <span>M</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">+</button>
+          <input type="text" name="name" value="1" />
+          <button class="minus-btn" type="button" name="button">-</button>
+        </div>
+
+        <div class="total-price">$3.5</div>
+      </div> -->
+    </div>
+
+    <footer class="footer" id="contact">
       <div class="footer-container">
         <div class="footer-info">
           <h3>BOTANIQUE CAFÉ</h3>

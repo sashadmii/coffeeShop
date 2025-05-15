@@ -38,15 +38,14 @@ function closeCart() {
   overlay.classList.remove('show');
 }
 
-function cardElement(value) {
+function cardElement(value, price) {
   const item = document.createElement('div');
-  const buttons = document.createElement('div');
-  const likeButton = document.createElement('span');
+  const button = document.createElement('div');
   const deleteButton = document.createElement('span');
   const image = document.createElement('div');
   const img = document.createElement('img');
   const description = document.createElement('div');
-  const descriptionText = document.createElement('span');
+  const descriptionText = document.createElement('div');
   const quantity = document.createElement('div');
   const quantityInput = document.createElement('input');
   const plusButton = document.createElement('button');
@@ -54,47 +53,43 @@ function cardElement(value) {
   const total = document.createElement('div');
 
   item.classList.add('item');
-  buttons.classList.add('buttons');
-  likeButton.classList.add('like-btn');
+  button.classList.add('button-container');
   deleteButton.classList.add('delete-btn');
-  image.classList.add('image');
+  image.classList.add('cart-image');
   description.classList.add('description');
   quantity.classList.add('quantity');
   plusButton.classList.add('plus-btn');
   minusButton.classList.add('minus-btn');
   total.classList.add('total-price');
 
-  console.log(`./images/toGo/${value}.png`);
-
   img.src = `./images/toGo/${value}.png`;
   img.alt = `${value}`;
-  img.style.width = '100px';
-  img.style.height = '100px';
 
   descriptionText.innerText = `${value}`;
+  deleteButton.innerHTML = '<img src="./images/icons/close.svg">';
   plusButton.type = 'button';
   plusButton.name = 'button';
-  plusButton.innerText = '+';
+  plusButton.innerHTML = '<img src="./images/icons/plus.svg"/>';
   minusButton.type = 'button';
   minusButton.name = 'button';
-  minusButton.innerText = '-';
+  minusButton.innerHTML = '<img src="./images/icons/minus.svg"/>';
   quantityInput.type = 'text';
   quantityInput.name = 'name';
   quantityInput.value = '1';
-  total.innerText = 'TOTAL';
+  total.innerText = `$${price}`;
 
-  buttons.appendChild(likeButton);
-  buttons.appendChild(deleteButton);
+  button.appendChild(deleteButton);
   image.appendChild(img);
   description.appendChild(descriptionText);
-  quantity.appendChild(plusButton);
-  quantity.appendChild(quantityInput);
   quantity.appendChild(minusButton);
+  quantity.appendChild(quantityInput);
+  quantity.appendChild(plusButton);
+  description.appendChild(quantity);
 
-  item.appendChild(buttons);
+  item.appendChild(button);
   item.appendChild(image);
   item.appendChild(description);
-  item.appendChild(quantity);
+  // item.appendChild(quantity);
   item.appendChild(total);
 
   cart.appendChild(item);
@@ -105,6 +100,6 @@ overlay.addEventListener('click', closeCart);
 addButtons.forEach((button) => {
   button.addEventListener('click', () => {
     openCart();
-    cardElement(button.value);
+    cardElement(button.value, button.dataset.price);
   });
 });

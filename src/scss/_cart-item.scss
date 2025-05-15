@@ -1,0 +1,70 @@
+@use 'button' as *;
+@use 'variables' as *;
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.item > :last-child {
+  margin-left: auto;
+  font-family: $heading-font;
+  font-size: $heading-font-size;
+}
+
+.delete-btn {
+  cursor: pointer;
+}
+
+.delete-btn img {
+  display: block;
+  width: $button-image-size + 0.5;
+  height: $button-image-size + 0.5;
+}
+
+.cart-image {
+  width: 9.4rem;
+  height: 9.4rem;
+  margin: 0 10px;
+}
+
+.cart-image img {
+  max-width: 100%;
+}
+
+.description {
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.quantity input {
+  border: none;
+  text-align: center;
+  width: 3rem;
+  font-size: $base-font-size + 0.125;
+  font-weight: 300;
+}
+
+.minus-btn,
+.plus-btn {
+  border: none;
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.minus-btn img,
+.plus-btn img {
+  display: block;
+  width: $button-image-size;
+  height: $button-image-size;
+}

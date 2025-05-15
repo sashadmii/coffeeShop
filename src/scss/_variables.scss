@@ -9,11 +9,11 @@ $cart-shadow: #00000033;
 
 // spacing
 $base-padding: 5rem;
-$base-margin: 0.75rem;
 $base-padding-sm: 2rem;
 $base-y-padding-button: 1rem;
 $base-x-padding-button: 2rem;
 $base-margin: 2rem;
+$cart-button-padding: 0.625rem;
 
 // breakpoints
 $breakpoint-lg: 1023px;
@@ -26,3 +26,6 @@ $heading-font: 'Bebas Neue';
 $heading-font-size: 2rem;
 $base-font: 'Nunito';
 $base-font-size: 1rem;
+
+// button image size
+$button-image-size: 1.125rem;

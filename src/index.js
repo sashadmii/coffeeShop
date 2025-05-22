@@ -1,6 +1,7 @@
 import './index.html';
 import './scss/main.scss';
 
+// SLIDER FUNCTIONALITY
 const slides = document.querySelectorAll('.carousel .card');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
@@ -22,15 +23,16 @@ next.addEventListener('click', () => {
   showSlide(currentSlide);
 });
 
+// OPEN / CLOSE CART
 const overlay = document.getElementById('overlay');
 const cart = document.getElementById('cart');
+const cartContent = document.querySelector('.cart-content');
 const addButtons = document.querySelectorAll('.order-btn');
-// const item = document.getElementsByClassName('active');
+const cartTotal = document.getElementById('cart-total');
 
 function openCart() {
   cart.classList.add('open');
   overlay.classList.add('show');
-  // console.log(item[0]);
 }
 
 function closeCart() {
@@ -38,7 +40,10 @@ function closeCart() {
   overlay.classList.remove('show');
 }
 
-function cardElement(value, price) {
+overlay.addEventListener('click', closeCart);
+
+// CREATE CART ITEM
+function createCardElement(value, price) {
   const item = document.createElement('div');
   const button = document.createElement('div');
   const deleteButton = document.createElement('span');
@@ -50,9 +55,10 @@ function cardElement(value, price) {
   const quantityInput = document.createElement('input');
   const plusButton = document.createElement('button');
   const minusButton = document.createElement('button');
-  const total = document.createElement('div');
+  const itemTotal = document.createElement('div');
 
   item.classList.add('item');
+  item.setAttribute('id', `${value}`);
   button.classList.add('button-container');
   deleteButton.classList.add('delete-btn');
   image.classList.add('cart-image');
@@ -60,7 +66,7 @@ function cardElement(value, price) {
   quantity.classList.add('quantity');
   plusButton.classList.add('plus-btn');
   minusButton.classList.add('minus-btn');
-  total.classList.add('total-price');
+  itemTotal.classList.add('item-total');
 
   img.src = `./images/toGo/${value}.png`;
   img.alt = `${value}`;
@@ -76,7 +82,8 @@ function cardElement(value, price) {
   quantityInput.type = 'text';
   quantityInput.name = 'name';
   quantityInput.value = '1';
-  total.innerText = `$${price}`;
+  itemTotal.innerText = `$${price}`;
+  itemTotal.setAttribute('data-price', `${price}`);
 
   button.appendChild(deleteButton);
   image.appendChild(img);
@@ -89,17 +96,86 @@ function cardElement(value, price) {
   item.appendChild(button);
   item.appendChild(image);
   item.appendChild(description);
-  // item.appendChild(quantity);
-  item.appendChild(total);
+  item.appendChild(itemTotal);
 
-  cart.appendChild(item);
+  cartContent.appendChild(item);
+  countTotal();
+
+  // DELETE CART ITEM
+  deleteButton.addEventListener('click', (e) => {
+    const item = e.target.closest('.item');
+    item.remove();
+
+    countTotal();
+  });
+
+  // INCREASE QUANTITY
+  plusButton.addEventListener('click', (e) => {
+    const currentQuantity = parseInt(quantityInput.value) || 0;
+    const newQuantity = currentQuantity + 1;
+    quantityInput.value = newQuantity;
+
+    itemTotal.innerText = `$${(price * newQuantity).toFixed(2)}`;
+
+    countTotal();
+  });
+
+  // DECREASE QUANTITY
+  minusButton.addEventListener('click', (e) => {
+    let currentQuantity = parseInt(quantityInput.value) || 0;
+    currentQuantity -= 1;
+
+    if (currentQuantity <= 0) {
+      const item = e.target.closest('.item');
+      item.remove();
+    } else {
+      quantityInput.value = currentQuantity;
+      itemTotal.innerText = `$${(price * currentQuantity).toFixed(2)}`;
+    }
+
+    countTotal();
+  });
 }
 
-overlay.addEventListener('click', closeCart);
-
+// ADD CART ITEM
 addButtons.forEach((button) => {
   button.addEventListener('click', () => {
     openCart();
-    cardElement(button.value, button.dataset.price);
+
+    const itemId = button.value;
+    const itemPrice = button.dataset.price;
+    const cartItem = document.getElementById(itemId);
+
+    if (cartItem) {
+      increaseItemQuantity(cartItem);
+    } else {
+      createCardElement(itemId, itemPrice);
+    }
   });
 });
+
+function increaseItemQuantity(cartItem) {
+  const quantityInput = cartItem.querySelector('.quantity input');
+  const currentQuantity = parseInt(quantityInput.value) || 0;
+  const newQuantity = currentQuantity + 1;
+  quantityInput.value = newQuantity;
+
+  const itemTotal = cartItem.querySelector('.item-total');
+  const unitPrice = parseFloat(itemTotal.dataset.price);
+  itemTotal.innerText = `$${(unitPrice * newQuantity).toFixed(2)}`;
+
+  countTotal();
+}
+
+// COUNT CART TOTAL
+function countTotal() {
+  const prices = document.querySelectorAll('.item-total');
+  const numericPrices = Array.from(prices).map((el) =>
+    parseFloat(el.innerText.replace(/[^0-9.]/g, ''))
+  );
+
+  const total = numericPrices.reduce((acc, val) => acc + val, 0).toFixed(2);
+
+  const totalNum = document.getElementById('cart-total');
+  totalNum.innerText = total;
+}

@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
     filename: 'bundle.[contenthash].js', // Webpack will auto-name the bundle
     path: path.resolve(__dirname, 'dist'),
@@ -35,6 +35,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html', // Source HTML
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/checkout.html',
+      filename: 'checkout.html',
     }),
   ],
   mode: 'development', // or 'production'

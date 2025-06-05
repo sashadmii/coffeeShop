@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'button' as *;
 
 .overlay {
   position: fixed;
@@ -42,14 +43,30 @@
   }
 
   .cart-total {
+    display: flex;
     margin-top: 1rem;
     padding-top: 0.75rem;
     border-top: 1px solid #ccc;
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: right;
+    justify-content: space-between;
+  }
+
+  .cart-total-text,
+  .cart-total-number {
     font-family: $heading-font;
     font-size: $heading-font-size;
+    font-weight: bold;
+  }
+
+  .cart-button {
+    @extend .base-button;
+    font-size: $heading-font-size;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .close-cart-bnt {
+    display: none;
   }
 }
 

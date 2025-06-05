@@ -103,6 +103,27 @@
 }
 
 @media screen and (max-width: $breakpoint-m) {
+  .cart {
+    width: 100%;
+  }
+
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart .close-cart-bnt {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    background-color: $white;
+  }
+
+  .close-cart-bnt img {
+    height: $heading-font-size;
+  }
+
   .footer-info,
   .footer-hours,
   .footer-socials {
@@ -165,6 +186,14 @@
 
   .aboutImg {
     width: 100%;
+  }
+
+  .cart-image {
+    display: none;
+  }
+
+  .button-container {
+    margin-right: 1rem;
   }
 
   .menuHead {
